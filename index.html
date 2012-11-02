@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,27 +16,162 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Aiskanix</h1>
-        <p>Jquery Plugin for editing image using Kinetic JS HTML5</p>
-
-        <p class="view"><a href="https://github.com/aiska/aiskanix">View the Project on GitHub <small>aiska/aiskanix</small></a></p>
-
+        <h1 class="header">Aiskanix</h1>
+        <p class="header">Jquery Plugin for editing image using Kinetic JS HTML5</p>
 
         <ul>
-          <li><a href="https://github.com/aiska/aiskanix/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/aiska/aiskanix/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/aiska/aiskanix">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/aiska/aiskanix/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/aiska/aiskanix/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/aiska/aiskanix">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/aiska">aiska</a></p>
+
+
       </header>
       <section>
         <h1>aiskanix</h1>
 
-<h3>Welcome to Aiskanic Jquery Plugin.</h3>
+<h1></h1>
 
-<p>This is JQuery Plugin n kinetic js to editing image using HTML 5
-you can check out the new branch:</p>
+<h2>Welcome to Aiskanix Jquery Plugin.</h2>
 
-<h3>Authors and Contributors</h3>
+<p>aiskanix.js is JQuery Plugin n kinetic js to editing image using HTML 5</p>
+
+<p><a href="https://github.com/aiska/aiskanix/blob/master/js/jquery.aiskanix.js">Download aiskanix.js</a></p>
+
+<p><a href="https://github.com/aiska/aiskanix/blob/master/js/jquery.aiskanix.min.js">Download aiskanix.min.js (minified 5kb)</a></p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Fit in Image to canvas</li>
+<li>Rotate image clock wise and counter clock wise</li>
+<li>Change display orientation to potrait and landscape.</li>
+<li>Zoom and scale image.</li>
+<li>Move image</li>
+</ul><h2>Future Features</h2>
+
+<ul>
+<li>create collage image.</li>
+<li>add Effect on image.</li>
+<li>create color setting, brightness, contrast, saturation, etc.</li>
+<li>Create Stamp and Text on canvas.</li>
+</ul><h2>How to use</h2>
+
+<h3>Installation</h3>
+
+<p>To use the aiskanix component, include the jQuery library and the kineticjs source file into your HTML document:</p>
+
+<pre><code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.html5canvastutorials.com/libraries/kinetic-v4.0.1.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jquery.aiskanix.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>[HTML]</p>
+
+<pre><code>&lt;body&gt;
+    &lt;div id="aiskanix_canvas"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>[Javascript]</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+    $(function () {
+        $('#aiskanix_canvas').aiskanix({ width: 300, height: 450 });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3>Configuration</h3>
+
+<pre><code>.aiskanix( Method, [Options] )
+
+Method: functions
+Options: An array to configure the properties of aiskanix
+</code></pre>
+
+<h3>Methods</h3>
+
+<p><strong>show_pic(</strong> <em>config</em> <strong>)</strong><br>
+Show picture to canvas.</p>
+
+<pre><code>$('#aiskanix_canvas').aiskanix('show_pic', { images_url: 'img/1.jpg', draggable: true });
+</code></pre>
+
+<p><strong>fit_in()</strong><br>
+fit in image to canvas.</p>
+
+<pre><code>$('#aiskanix_canvas').aiskanix('fit_in');
+</code></pre>
+
+<p><strong>fill_in()</strong><br>
+Fill in image to canvas.</p>
+
+<pre><code>$('#aiskanix_canvas').aiskanix('fill_in');
+</code></pre>
+
+<p><strong>move(</strong> <em>x, y</em> <strong>)</strong><br>
+Move image to plus x and plus y by pixel.</p>
+
+<pre><code>// move left 5 pixel
+$('#aiskanix_canvas').aiskanix('move', -5, 0);
+
+// move right 5 pixel
+$('#aiskanix_canvas').aiskanix('move', 5, 0);
+
+// move up 5 pixel
+$('#aiskanix_canvas').aiskanix('move', 0, -5);
+
+// move down 5 pixel
+$('#aiskanix_canvas').aiskanix('move', 0, 5);
+</code></pre>
+
+<p><strong>rotate( <em>cw</em> )</strong><br>
+Rotate image 90 degree clock wise or counter clock wise.</p>
+
+<pre><code>//Rotate image to 90 degree clock wise
+$('#aiskanix_canvas').aiskanix('rotate', true);
+
+//Rotate image to 90 degree counter clock wise
+$('#aiskanix_canvas').aiskanix('rotate', false);
+</code></pre>
+
+<p><strong>rotate_deg( <em>deg</em> )</strong><br>
+Rotate image by degree of rotation.</p>
+
+<pre><code>//Rotate image to 45 degree
+$('#aiskanix_canvas').aiskanix('rotate_deg', [45]);
+</code></pre>
+
+<h3>Options</h3>
+
+<p><strong><em>width: null</em></strong> <strong>(Required)</strong> <br>type: <em>number</em> <br>Width of canvas.<br>default : <strong>null</strong></p>
+
+<p><strong><em>height: null</em></strong> <strong>(Required)</strong> <br>type: <em>number</em> <br>Height of canvas.<br>default : <strong>null</strong></p>
+
+<p><strong><em>images_url: null</em></strong> <strong>(Required)</strong> <br>type: <em>string</em> <br>url of images.<br>default : <strong>null</strong></p>
+
+<p><strong><em>x: 0</em></strong> <br>type: <em>number</em> <br>Horizontal Position of image.<br>default : <strong>0</strong></p>
+
+<p><strong><em>y: 0</em></strong> <br>type: <em>number</em> <br>Vertical Position of image.<br>default : <strong>0</strong></p>
+
+<p><strong><em>offset: { x: 0, y: 0 }</em></strong> <br>type: <em>object</em> <br>Offset Position of image.<br>default : <strong>{ x: 0, y: 0 }</strong></p>
+
+<p><strong><em>draggable: true</em></strong> <br>type: <em>bool</em> <br>image can be draggable.<br>default : <strong>true</strong></p>
+
+<p><strong><em>potrait: true</em></strong> <br>type: <em>bool</em> <br>image orientation, potrait if true and Landscape if false.<br>default : <strong>true</strong></p>
+
+<p><strong><em>rotation: 0</em></strong> <br>type: <em>int</em> <br>Rotation anggle (in degree) of image.<br>default : <strong>0</strong></p>
+
+<p><strong><em>scale: 1</em></strong> <br>type: <em>float</em> <br>Scale of image, default is 1, same as original image size scale.<br>default : <strong>1</strong></p>
+
+<p><strong><em>auto_fill_in: true</em></strong> <br>type: <em>bool</em> <br>If true, image is automatic Fill in when it draw.<br>default : <strong>true</strong></p>
+
+<p><strong><em>auto_orientation: true</em></strong> <br>type: <em>bool</em> <br>If true, canvas is automaticly set to default orientation of image.<br>default : <strong>true</strong></p>
+
+<h2>Authors and Contributors</h2>
 
 <p>copyright 2012 by Aiska Hendra
 Thanks to all Contributors</p>
@@ -47,11 +183,10 @@ please contact me at <a href="mailto:aiska_hendra@yahoo.com">aiska_hendra@yahoo.
 and we’ll help you sort it out.</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/aiska">aiska</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
