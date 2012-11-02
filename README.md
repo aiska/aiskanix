@@ -81,6 +81,21 @@ Move image to plus x and plus y by pixel.
     // move down 5 pixel
     $('#aiskanix_canvas').aiskanix('move', 0, 5);
 
+**rotate( *cw* )**<br />
+Rotate image 90 degree clock wise or counter clock wise.
+
+    //Rotate image to 90 degree clock wise
+    $('#aiskanix_canvas').aiskanix('rotate', true);
+
+    //Rotate image to 90 degree counter clock wise
+    $('#aiskanix_canvas').aiskanix('rotate', false);
+
+**rotate_deg( *deg* )**<br />
+Rotate image by degree of rotation.
+
+    //Rotate image to 45 degree
+    $('#aiskanix_canvas').aiskanix('rotate_deg', [45]);
+
 
 ### Options
 ***width: null*** **(Required)** <br />type: *number* <br />Width of canvas.<br />default : **null**
